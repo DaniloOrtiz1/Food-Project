@@ -1,0 +1,190 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes checkDraw {
+  from { stroke-dashoffset: 40; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* OVERLAY: Ajustado para garantir que fique na frente de tudo */
+.conf-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92); /* Um pouco mais escuro para destaque */
+  z-index: 9999; /* Valor bem alto para não ficar atrás do carrinho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(4px); /* Efeito de desfoque no fundo */
+}
+
+.conf-card {
+  background: #111;
+  border: 1px solid rgba(255, 102, 0, 0.5); /* Borda mais forte */
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* LOGO: Garantindo que a imagem apareça e não suma */
+.conf-logo-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 102, 0, 0.5);
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.conf-logo-img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher o círculo sem distorcer */
+  display: block; /* Garante que seja renderizada */
+}
+
+.conf-check-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff6600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conf-check-svg {
+  width: 30px;
+  height: 30px;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 0;
+  animation: checkDraw 0.5s ease 0.3s both;
+}
+
+.conf-titulo {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.7rem;
+  color: #fff;
+  margin: 0;
+}
+
+.conf-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: #aaa; /* Um pouco mais claro para ler melhor */
+  line-height: 1.75;
+  margin: 0;
+}
+
+.conf-sub span {
+  color: #ff6600;
+  font-weight: 700;
+}
+
+/* Efeito da estradinha/moto */
+.conf-rua {
+  width: 100%;
+  position: relative;
+  height: 60px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.conf-rua-linha {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 102, 0, 0.15);
+}
+
+.conf-moto {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: left 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-top: -4px;
+}
+
+.conf-casa {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.conf-status-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 102, 0, 0.07);
+  border: 1px solid rgba(255, 102, 0, 0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.conf-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff6600;
+  flex-shrink: 0;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.conf-status-txt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ff6600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.conf-voltar {
+  background: transparent;
+  border: none;
+  color: #666;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 12px;
+  transition: color 0.2s;
+}
+
+.conf-voltar:hover { color: #fff; }
+
+@media (max-width: 420px) {
+  .conf-card { padding: 28px 20px 22px; }
+  .conf-titulo { font-size: 1.4rem; }
+}

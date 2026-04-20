@@ -1,0 +1,151 @@
+.lanches-section {
+  background: #181818;
+  padding: 100px 60px;
+  width: 100%;
+}
+
+.lanches-header {
+  text-align: center;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.lanches-pre {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #7e7b7b;
+}
+
+.lanches-titulo {
+  font-family: 'Lilita One', cursive;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  color: #fff;
+  line-height: 1;
+  margin: 0;
+}
+
+.lanches-titulo .laranja-card { color: #ff6600; }
+
+.lanches-linha {
+  width: 56px;
+  height: 4px;
+  background: #ff6600;
+  border-radius: 2px;
+}
+
+.lanches-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.lanche-card {
+  background: #111;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lanche-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255,102,0,0.4);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+
+.lanche-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.lanche-card-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.lanche-card:hover .lanche-card-img { transform: scale(1.07); }
+
+.lanche-card-preco {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: #ff6600;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 0.82rem;
+  padding: 5px 11px;
+  border-radius: 6px;
+}
+
+.lanche-card-body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.lanche-card-nome {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.15rem;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.lanche-card-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: #666;
+  flex: 1;
+  margin: 0;
+}
+
+.lanche-card-btn {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  padding: 11px 0;
+  background: transparent;
+  color: #ff6600;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border: 1.5px solid #ff6600;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.lanche-card-btn:hover {
+  background: #ff6600;
+  color: #fff;
+}
+
+@media (max-width: 1100px) {
+  .lanches-section { padding: 80px 32px; }
+  .lanches-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px) {
+  .lanches-section { padding: 60px 20px; }
+  .lanches-grid { grid-template-columns: 1fr; }
+  .lanche-card-img { height: 210px; }
+}
